@@ -13,7 +13,7 @@ export const Menu = ({op1, op2, op3, op4} : {
     op1: string;
     op2: string;
     op3: boolean;
-    op4: number;
+    op4: string;
 }) => {
 
     const style = 

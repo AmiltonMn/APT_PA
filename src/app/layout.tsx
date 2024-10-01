@@ -6,7 +6,7 @@ import {Roboto} from "next/font/google";
 import "./globals.css";
 import { Menu } from "@/Components/menu";
 import { Footer } from "@/Components/footer";
-import { Login } from "@/Components/login";
+import { Cards } from "@/Components/cards";
 
 const roboto = Roboto({
   weight: ["100", "400", "900"],
@@ -36,10 +36,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} antialiased`}
       >
-        <Menu op1="Page 1" op2="Page 2" op3 op4={9}/>
-        <Login/>
+        <Menu op1="Inicial" op2="Maths" op3="Algo" op4="page 4"/>
+        <div className="flex flex-row justify-around items-center mt-5">
+          <Cards />
+          <Cards />
+          <Cards />
+        </div>
         {children}
-        <Footer nome="Amilton" texto="Batata"/>
       </body> 
     </html>
   );

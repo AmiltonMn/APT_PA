@@ -13,7 +13,7 @@ import Link from "next/link";
 export const Menu = ({op1, op2, op3, op4} : {
     op1: string;
     op2: string;
-    op3: boolean;
+    op3: string;
     op4: string;
 }) => {
 
@@ -27,8 +27,8 @@ export const Menu = ({op1, op2, op3, op4} : {
     <nav className={style.nav}>
         <Link href={ROUTES.home} className={style.bttn}>{op1}</Link>
         <Link href={ROUTES.maths} className={style.bttn}>{op2}</Link>
+        <Link href={ROUTES.generalFunction} className={style.bttn}>{op3}</Link>
         <p className={style.bttn}>{op4}</p>
-        <p className={style.bttn}>{op1}</p>
     </nav>
     )
 }

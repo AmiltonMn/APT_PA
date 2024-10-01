@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import { Cards } from "@/Components/cards";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -7,8 +8,37 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+
+  const dados: {imagem: string; titulo: string, cor: string, corInfo: string}[] = [
+    {
+      imagem: "batata",
+      titulo: "Batata Inglesa",
+      cor: "bg-orange-800",
+      corInfo: "bg-orange-600"
+    },
+    {
+      imagem: "batataAsterix",
+      titulo: "Batata Asterix",
+      cor: "bg-red-800",
+      corInfo: "bg-red-600"
+    },
+    {
+      imagem: "batataDoce",
+      titulo: "Batata Doce",
+      cor: "bg-blue-800",
+      corInfo: "bg-blue-600"
+    }
+  ]
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <>
+    <div className="flex flex-row justify-evenly mt-20 flex-wrap">
+      {dados.map((item, index) => (
+        <div key={index}>
+          <Cards cor={item.cor} corInfo={item.corInfo} imagem={item.imagem} titulo={item.titulo}/>
+        </div>
+      ))}
     </div>
+    </>
   );
 }

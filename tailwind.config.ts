@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      spacing: {
+        "26": "26px",
+      },
       colors: {
         branco: "var(--white)",
         preto: "var(--black)",

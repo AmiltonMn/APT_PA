@@ -4,17 +4,18 @@ import batata from "@/assets/batata.jpg";
 import batataDoce from "@/assets/batataDoce.jpg";
 import batataAsterix from "@/assets/batataAsterix.jpg";
 
-export const Cards = ({cor, corInfo, imagem, titulo} : {
+export const Cards = ({cor, corInfo, imagem, titulo, corTexto} : {
     cor: string;
     corInfo: string;
     imagem: string;
-    titulo: string
+    titulo: string;
+    corTexto: string;
 
 }) => {
 
     const style = 
     {
-        card: "flex items-center justify-center flex-col hover:scale-110 text-wrap mt-5",
+        card: "transition ease-in-out duration-200 flex items-center justify-center flex-col hover:scale-110 text-wrap mt-5 hover:shadow-2xl",
         imagemStyle: "flex rounded-t-2xl h-[200px]",
         textoCard: "flex bg-slate-200 w-full text-center h-32 items-center justify-center",
         infoCard: `flex ${cor} w-full rounded-b-2xl items-center justify-between flex-row h-20`,
@@ -30,6 +31,7 @@ export const Cards = ({cor, corInfo, imagem, titulo} : {
 
             <div className={style.textoCard}>
                 <div>
+                    <h1 className={`${corTexto}`}><b>1 week ago</b></h1>
                     <h1 className="text-[24px]"><b>{titulo}</b></h1>
                     <p className="leading-[1]">Podemos fazer ela frita, assada e cozida <br/>
                     Tive que fazer um BR, se não buga</p>
@@ -37,17 +39,17 @@ export const Cards = ({cor, corInfo, imagem, titulo} : {
             </div>
 
             <div className={style.infoCard}>
-                <div className={`flex ${corInfo} h-full justify-center flex-col items-center w-[98px] rounded-bl-2xl`}>
+                <div className={`flex ${corInfo} h-full justify-center flex-col items-center w-[98px] rounded-bl-2xl text-white`}>
                     <h2>Preço:</h2>
                     <h2>R$12,40</h2>
                 </div>
 
-                <div className={`flex ${corInfo} h-full justify-center flex-col items-center w-[98px]`}>
+                <div className={`flex ${corInfo} h-full justify-center flex-col items-center w-[98px] text-white`}>
                     <h2>Vendas:</h2>
                     <h2>40</h2>
                 </div>
 
-                <div className={`flex ${corInfo} h-full justify-center flex-col items-center w-[98px] rounded-br-2xl`}>
+                <div className={`flex ${corInfo} h-full justify-center flex-col items-center w-[98px] rounded-br-2xl text-white`}>
                     <h2>Nota:</h2>
                     <h2>4.5</h2>
                 </div>

@@ -9,33 +9,36 @@ export const metadata: Metadata = {
 
 export default function Home() {
 
-  const dados: {imagem: string; titulo: string, cor: string, corInfo: string}[] = [
+  const dados: {imagem: string; titulo: string, cor: string, corInfo: string, corTexto: string}[] = [
     {
       imagem: "batata",
       titulo: "Batata Inglesa",
       cor: "bg-orange-800",
-      corInfo: "bg-orange-600"
+      corInfo: "bg-orange-600",
+      corTexto: "text-orange-600"
     },
     {
       imagem: "batataAsterix",
       titulo: "Batata Asterix",
       cor: "bg-red-800",
-      corInfo: "bg-red-600"
+      corInfo: "bg-red-600",
+      corTexto: "text-red-600"
     },
     {
       imagem: "batataDoce",
       titulo: "Batata Doce",
       cor: "bg-blue-800",
-      corInfo: "bg-blue-600"
+      corInfo: "bg-blue-600",
+      corTexto: "text-blue-600"
     }
   ]
 
   return (
     <>
-    <div className="flex flex-row justify-evenly mt-20 flex-wrap">
+    <div className="flex flex-row gap-32 justify-center mt-20 flex-wrap">
       {dados.map((item, index) => (
         <div key={index}>
-          <Cards cor={item.cor} corInfo={item.corInfo} imagem={item.imagem} titulo={item.titulo}/>
+          <Cards cor={item.cor} corInfo={item.corInfo} imagem={item.imagem} titulo={item.titulo} corTexto={item.corTexto}/>
         </div>
       ))}
     </div>

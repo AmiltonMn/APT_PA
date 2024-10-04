@@ -10,17 +10,19 @@ import Link from "next/link";
 
 // export const Menu : React.FC<IMenu> []...]
 
-export const Menu = ({op1, op2, op3, op4} : {
+export const Menu = ({op1, op2, op3, op4, op5, op6} : {
     op1: string;
     op2: string;
     op3: string;
     op4: string;
+    op5: string;
+    op6: string;
 }) => {
 
     const style = 
     {
         bttn:"px-2 py-1 min-w-3.5 text-branco cursor-pointer",
-        nav: "text-pink-500 bg-pink-700 gap-3 font-robFont text-medium flex flex-row justify-around align-center p-3"
+        nav: "bg-black gap-3 font-robFont text-medium flex flex-row justify-around align-center p-3"
     }
 
     return (
@@ -28,7 +30,9 @@ export const Menu = ({op1, op2, op3, op4} : {
         <Link href={ROUTES.home} className={style.bttn}>{op1}</Link>
         <Link href={ROUTES.maths} className={style.bttn}>{op2}</Link>
         <Link href={ROUTES.generalFunction} className={style.bttn}>{op3}</Link>
-        <p className={style.bttn}>{op4}</p>
+        <Link href={ROUTES.fetchNativo} className={style.bttn}>{op4}</Link>
+        <Link href={ROUTES.axiosPage} className={style.bttn}>{op5}</Link>
+        <Link href={ROUTES.serverPage} className={style.bttn}>{op6}</Link>
     </nav>
     )
 }
